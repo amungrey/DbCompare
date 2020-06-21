@@ -1,0 +1,14 @@
+#TestGoal
+-TCS_COUNT_CHECJ_MYSQL_ES:
+  severity:critical
+  target:
+    query: |
+      SELECT count(1) as value
+      from dual
+    type: single_value_compare
+    expected: compare
+    source:
+      query: >-
+        acc
+      type: single_value_compare
+      expected: compare

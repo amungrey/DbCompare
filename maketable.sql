@@ -1,0 +1,21 @@
+CREATE TABLE cars (
+	`Height` DECIMAL(38, 0) NOT NULL, 
+	`Length` DECIMAL(38, 0) NOT NULL, 
+	`Width` DECIMAL(38, 0) NOT NULL, 
+	`Driveline` VARCHAR(17) NOT NULL, 
+	`Engine_Type` VARCHAR(60) NOT NULL, 
+	`Hybrid` BOOL NOT NULL, 
+	`Number_of_Forward_Gears` DECIMAL(38, 0) NOT NULL, 
+	`Transmission` VARCHAR(30) NOT NULL, 
+	`City_mpg` DECIMAL(38, 0) NOT NULL, 
+	`Fuel_Type` VARCHAR(22) NOT NULL, 
+	`Fuel_Information.Highway mpg` DECIMAL(38, 0) NOT NULL, 
+	`Classification` VARCHAR(22) NOT NULL, 
+	`ID` VARCHAR(67) NOT NULL, 
+	`Make` VARCHAR(18) NOT NULL, 
+	`Model_Year` VARCHAR(48) NOT NULL, 
+	`Year` DECIMAL(38, 0) NOT NULL, 
+	`Horsepower` DECIMAL(38, 0) NOT NULL, 
+	`Torque` DECIMAL(38, 0) NOT NULL, 
+	CHECK (`Hybrid` IN (0, 1))
+);
