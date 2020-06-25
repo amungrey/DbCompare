@@ -38,3 +38,7 @@ mysqlimport --ignore-lines=1 \
             --local -u root \
             -p test \
              cars.csv
+             
+#How to run the script:
+python3 Validate/bin/run_crossdb_validator.py --sqldb localhost --elasticdb localhost --request_type environment_shakeout --testsuite Validate/testsuite/carsSuite.conf 
+
