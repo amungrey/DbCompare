@@ -24,7 +24,7 @@ class SQLExecutionException(object):
 
 
 class DB:
-    def __init__(self,host=None, config=os.path.abspath("DB/db.conf"), db_name=None, db_port=None, ssl=None):
+    def __init__(self,host=None, config=os.path.abspath("DB/config/db.conf"), db_name=None, db_port=None, ssl=None):
         self.host= host
         self.config=config
         self.db_name=db_name

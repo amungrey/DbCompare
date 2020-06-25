@@ -23,18 +23,6 @@ def required_args():
 if __name__ == '__main__':
     start_time = datetime.now()
     options = get_options()
-    # results = []
-    # Connection = Elasticsearch([{'host': options.es_host, 'port': 9200}])
-    # response = Connection.search(index='ES_INDEX', doc_type='ES_DOC_TYPE', body=ES_QUERY)
-    # output = response['hits'].get('total')
-    # esresult = options.es_output
-    # if (isinstance(output,int)):
-    #     es_result= output
-    # else:
-    #     for doc in output:
-    #         results.append(doc)
-    #     es_result = results[0].get('version')
-    # with open(esresult,"w") as myfile:
-    #     myfile.write(str(es_result))
+
 
 
