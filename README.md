@@ -1,15 +1,17 @@
 # DbCompare
 Python based framework that allows to compare between any 2 types of the DB. This framework can be used for DB testing such as Data Warehourse or Data migration
 
-To test this on your local, you will need MYSQL and Elastic search:
+To test this on your local, you will need MYSQL and Elastic search . The framework accepts 2 DB names(mysql and ES so far), type of the tests to be run and email of the people report needs to be emailed, this framework can easily be extended to include other relational and non relational DB's (Mongo, Greenplum etc) 
 
-#How to install and Run MYSQL:
+Prerequisite 1:
+#How to install and Run MYSQL on local:
 https://dev.mysql.com/doc/mysql-osx-excerpt/5.7/en/osx-installation-pkg.html
 
 Once the pkg file downloaded and installed , run:
 /usr/local/mysql/bin/mysql -u root -p
 Root1234
 
+Prerequisite 2:
 #How to install Elastic search on local:
 https://www.elastic.co/guide/en/elasticsearch/reference/current/targz.html
 
@@ -36,3 +38,9 @@ mysqlimport --ignore-lines=1 \
             --local -u root \
             -p test \
              cars.csv
+             
+#How to run the script:
+python3 Validate/bin/run_crossdb_validator.py --sqldb localhost --elasticdb --email <email@gmail.com> localhost --request_type environment_shakeout --testsuite Validate/testsuite/carsSuite.conf 
+
+python3 Validate/bin/run_crossdb_validator.py --sqldb localhost --elasticdb --email <email@gmail.com> localhost --request_type data_integrity --testsuite Validate/testsuite/dataIntegrityTests.conf
+
