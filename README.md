@@ -40,5 +40,7 @@ mysqlimport --ignore-lines=1 \
              cars.csv
              
 #How to run the script:
-python3 Validate/bin/run_crossdb_validator.py --sqldb localhost --elasticdb localhost --request_type environment_shakeout --testsuite Validate/testsuite/carsSuite.conf 
+python3 Validate/bin/run_crossdb_validator.py --sqldb localhost --elasticdb --email <email@gmail.com> localhost --request_type environment_shakeout --testsuite Validate/testsuite/carsSuite.conf 
+
+python3 Validate/bin/run_crossdb_validator.py --sqldb localhost --elasticdb --email <email@gmail.com> localhost --request_type data_integrity --testsuite Validate/testsuite/dataIntegrityTests.conf
 
