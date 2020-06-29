@@ -30,10 +30,12 @@ class ES:
             self.connection = Elasticsearch([{'host': self.host, 'port': self.es_port}])
 
     def get_row(self,es_query):
+
         results = []
         response = self.connection.search(index=self.es_index, doc_type=self.es_doc_type, body=es_query)
         #response = self.connection.search(index=es_index, doc_type=es_doc_type, body=es_query)
         output = response['hits'].get('total')
+        output=output['value']
 
         if (isinstance(output, int)):
             es_result = output
