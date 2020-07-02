@@ -1,7 +1,9 @@
 # DbCompare
-Python based framework that allows to compare between any 2 types of the DB. This framework can be used for DB testing such as Data Warehourse or Data migration
+Python based framework that allows to compare between any 2 types of the DB. This framework can be used for DB testing projects such as Data Warehourse or Data migration.
 
 To test this on your local, you will need MYSQL and Elastic search . The framework accepts 2 DB names(mysql and ES so far), type of the tests to be run and email of the people report needs to be emailed, this framework can easily be extended to include other relational and non relational DB's (Mongo, Greenplum etc) 
+
+If you already have the Mysql and ES DB's hosted, skip the below and go to the section: How to set up and run
 
 Prerequisite 1:
 #How to install and Run MYSQL on local:
@@ -38,6 +40,13 @@ mysqlimport --ignore-lines=1 \
             --local -u root \
             -p test \
              cars.csv
+             
+#How to set up and run:   
+1. Clone the repo
+2. set the PYTHONPATH in bashprofile or bashrc to the root of this repo. For example /Users/akshaymungrey/DBCompare
+3. Edit the DB hosts with your hosts: /DBCompare/DB/config
+4. Run the tests using below commands
+ 
              
 #How to run the script:
 python3 Validate/bin/run_crossdb_validator.py --sqldb localhost --elasticdb --email <email@gmail.com> localhost --request_type environment_shakeout --testsuite Validate/testsuite/carsSuite.conf 
