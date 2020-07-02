@@ -62,21 +62,20 @@ class CrossDataValidator():
             db_con.close()
 
         except:
-            testResults.append({'error':'issue with the connections'})
+            pass
+            #testResults.append({'error':'issue with the connections'})
 
         finally:
-            pd.DataFrame.from_dict(testResults, orient='columns')
-            send_mail('DBCompare','DBCompare', self.email,[report_file] )
+            df1=pd.DataFrame.from_dict(testResults, orient='columns')
+            df1.to_excel(self.writer, self.request_type)
+            self.writer.save()
+            file_list_to_email=[]
+            file_list_to_email.append(report_file)
+        if self.email:
+            send_mail(body='------DBCompare Test Report ------\n', html_body='DBCompare is run on ' + str(datetime.now()),
+                  recipients=self.email, file_list=file_list_to_email)
 
-
-
-
-
-
-
-
-
-            #for row in testsuiteDict:
+        #for row in testsuiteDict:
             #    print (row)
 
             #pd.DataFrame.from_dict(self.db_con(query),orient='columns'))

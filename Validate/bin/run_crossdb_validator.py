@@ -27,24 +27,6 @@ def check_options(options,parser):
         if getattr(options,option) != None:
             parser.error("Missing required argument %s" %option)
 
-
-# def check_options(options,parser):
-#     db_cnt=0
-#     for option in ['sqldb', 'elasticdb1']:
-#         if getattr(options,option) != None:
-#             db_cnt +=1
-#     for option in ['execute_only']:
-#         if getattr(options,option) == None:
-#             parser.error("YAML validation file is a mandatory option to run this script %s" %option)
-#     if((db_cnt==0) or (db_cnt > 2)):
-#         parser.error("You have to give one or two databases to run this script:\n %s" % options)
-#
-#
-# def check_source_target_dbs(options, parser):
-#     for option in ['elasticdb1']:
-#         if getattr(options,option) != None:
-#             elasticdb_cnt +=1
-
 def main():
     parser = OptionParser()
     options = get_options(parser)
